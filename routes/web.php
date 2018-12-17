@@ -36,4 +36,4 @@ Route::get("/proyecto/api", "ProyectoController@api");
 
 Route::post("/proyecto/unjoinproject", "ProyectoController@unjoinproject");
 
-Route::post("/proyecto/eliminarproject", "ProyectoController@deleteProject");
+Route::post("/proyecto/eliminarproject", "ProyectoController@deleteproject");

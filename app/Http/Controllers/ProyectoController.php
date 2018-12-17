@@ -71,13 +71,20 @@ class ProyectoController extends Controller
     $vac = compact("proyectos");
   }
 
-  public function unjoinProject(){
-
+  public function unjoinproject(Request $req){
+if(!Auth::check()){
+  return redirect("/login");
+}
+Auth::user()->proyectos()
   }
-  public function deleteProject(){
+
+
+
+
+  public function deleteproject(){
     $post =
     $post -> delete();
-    $USUARIOSENPROYECTO -> unjoinProject();
+    $USUARIOSENPROYECTO -> unjoinproject();
     return redirect('/profile')->with('¡Post eliminado con exito!');
   }
 
