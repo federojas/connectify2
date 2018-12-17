@@ -34,7 +34,7 @@
   <br>
   <br>
   <h1 class="h1RL">Mis Proyectos</h1>
-  
+
   <ul>
     @forelse($misProyectos as $proyecto)
       <li>
@@ -44,6 +44,10 @@
         <br>
         <br>
         <br>
+        <form class="" action="/proyecto/eliminarproject" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="id_proyecto" value="{{$proyecto->id}}">
+          <button type="submit" name="button">Eliminar Proyecto</button>
       </li>
     @empty
         <h3>No hay proyectos</h3>
@@ -61,6 +65,10 @@
         <br>
         <br>
         <br>
+        <form class="" action="/proyecto/unjoinproject" method="post">
+          {{ csrf_field() }}
+          <input type="hidden" name="id_proyecto" value="{{$proyecto->id}}">
+          <button type="submit" name="button">Salir del Proyecto</button>
       </li>
     @empty
         <h3>No hay proyectos</h3>

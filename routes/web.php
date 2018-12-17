@@ -33,3 +33,7 @@ Route::get("/proyecto/join", "ProyectoController@join");
 Route::post("/proyecto/joinproject", "ProyectoController@joinproject");
 
 Route::get("/proyecto/api", "ProyectoController@api");
+
+Route::post("/proyecto/unjoinproject", "ProyectoController@unjoinproject");
+
+Route::post("/proyecto/eliminarproject", "ProyectoController@deleteProject");
