@@ -75,7 +75,7 @@ class ProyectoController extends Controller
 if(!Auth::check()){
   return redirect("/login");
 }
-Auth::user()->proyectos()->dettach($req["id_proyecto"]);
+Auth::user()->proyectos()->detach($req["id_proyecto"]);
 return redirect('/profile')->with('Has abandonado el proyecto. ¡Pero puedes volver a unirte cuando quieras!');
   }
 
