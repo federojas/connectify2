@@ -76,15 +76,19 @@ if(!Auth::check()){
   return redirect("/login");
 }
 Auth::user()->proyectos()
+return redirect('/profile')->with('Has abandonado el proyecto. ¡Pero puedes volver a unirte cuando quieras!');
   }
 
 
 
 
-  public function deleteproject(){
-    $post =
+  public function deleteproject(Request $req){
+    if(!Auth::check()){
+      return redirect("/login");
+    }
+    $post = *Proyecto(id)*
     $post -> delete();
-    $USUARIOSENPROYECTO -> unjoinproject();
+    *$USUARIOSENPROYECTO* -> unjoinproject();
     return redirect('/profile')->with('¡Post eliminado con exito!');
   }
 
