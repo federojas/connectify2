@@ -75,21 +75,19 @@ class ProyectoController extends Controller
 if(!Auth::check()){
   return redirect("/login");
 }
-Auth::user()->proyectos()
+Auth::user()->proyectos()->dettach($req["id_proyecto"]);
 return redirect('/profile')->with('Has abandonado el proyecto. ¡Pero puedes volver a unirte cuando quieras!');
   }
-
-
-
 
   public function deleteproject(Request $req){
     if(!Auth::check()){
       return redirect("/login");
     }
-    $post = *Proyecto(id)*
+    Proyecto($req["id_proyecto"])->user()->sync([]);
+    $post = Proyecto($req["id_proyecto"]);
     $post -> delete();
-    *$USUARIOSENPROYECTO* -> unjoinproject();
-    return redirect('/profile')->with('¡Post eliminado con exito!');
+
+    return redirect('/profile')->with('¡Proyecto eliminado con exito!');
   }
 
 }
